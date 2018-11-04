@@ -32,7 +32,7 @@
       <!-- template v-if="showInput" -->
       <tr v-if="showInput">
         <td v-for="(dig, i) in digs">
-          <input type="text" pattern="\d*" maxlength="1" ref="key"  @keyup.left="prv(i)" @keyup.right="nxt(i)" @keyup.enter="rateLine" v-model="digs[i]" @focus="$event.target.select()"
+          <input type="number" pattern="\d*" maxlength="1" ref="key"  @keyup.left="prv(i)" @keyup.right="nxt(i)" @keyup.enter="rateLine" v-model="digs[i]" @focus="$event.target.select()"
           @keyup="isNr(i, $event)"
           >
         </td>
