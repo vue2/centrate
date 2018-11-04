@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Getting Started with VueJS - VueBox</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+<div id="app" class=main>
+  <h1>MY GAME</h1>
+  <h2>GUESS MY NUMBER</h2>
+  <table>
+    <tbody>
+      <tr v-for="line in lines">
+        <td v-for="i in line.line">
+          {{i}}
+        </td>
+        <td/>
+        <td v-for="r in line.rating">
+          {{r}}
+        </td>
+        
+      <tr>
+        <!--td><br/></td -->
+      </tr>
+      <tr/>
+      
+      <!-- template v-if="showInput" -->
+      <tr v-if="showInput">
+        <td v-for="(dig, i) in digs">
+          <input type="text" pattern="\d*" maxlength="1" ref="key"  @keyup.left="prv(i)" @keyup.right="nxt(i)" @keyup.enter="rateLine" v-model="digs[i]" @focus="$event.target.select()"
+          @keyup="isNr(i, $event)"
+          >
+        </td>
+        <td></td>
+        <td v-for="(dig, i) in digs"> {{dig}}
+        </td>
+      </tr>
+      <!-- /template --> 
+    </tbody>
+  </table>
+  <div>{{message}} <br /> {{rating}} <br /> </div>
+</div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+table {
+    width: 90%;
+    margin: 8%;
+    table-layout: fixed;
+}
+
+input {
+    width: 25px;
+    text-align: center;
+}
+
+.main {
+    text-align: center;
+    width: 80%;
+    max-width: 300px;
+    margin: 5px auto;
+    background-color: rgb(198, 228, 239);
+    border-style: solid;
+    border-color: rgb(23, 61, 76);
+    border-width: 15px;
+    border-radius: 25px;
+}
+
+h2 {
+    text-decoration: underline;
+} 
+
+#title {
+    padding: 5px;
+    text-align: right;
+    margin: 0px;
+    border-bottom: solid 8px;
+    border-color: rgb(23, 61, 76);
+}
+
+#restart {
+    text-align: center;
+    padding: 2px;
+    margin: 0px;
+    border-top: solid 8px;
+    border-color: rgb(23, 61, 76);
+}
+
+button {
+    font-size: 17px;
+    background-color: rgb(198, 228, 239);
+    border: 0;
+}
+
+
