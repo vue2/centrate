@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Getting Started with VueJS - VueBox</title>
+    <title>Centrate</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/vue"></script>
 </head>
@@ -33,7 +33,7 @@
       <tr v-if="showInput">
         <td v-for="(dig, i) in digs">
           <input type="number" pattern="\d*" maxlength="1" ref="key"  @keyup.left="prv(i)" @keyup.right="nxt(i)" @keyup.enter="rateLine" v-model="digs[i]" @focus="$event.target.select()"
-          @keyup="isNr(i, $event)"
+          @keyup="isNr(i, $event)" @focusout="nxt(i)" 
           >
         </td>
         <td></td>

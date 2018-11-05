@@ -30,7 +30,7 @@ const vm = new Vue({
     isNr: function(k, event) {
       n = this.digs[k];
       //console.log(event.key, k, n);
-      if (parseInt(event.key, 10) >= 0) {this.nxt(k)}
+      if (parseInt(event.key, 10) >= 0) {this.nxt(k); this.message = "... next ..."}
       else if (event.key == "Backspace") {this.prv(k)};
       if (!n.match(/[0-9]/)) {
         this.$refs.key[k].value = "";
