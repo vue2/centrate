@@ -29,8 +29,23 @@ const vm = new Vue({
     prv(k){if (k>0) this.$refs.key[k-1].focus();},
     isNr: function(k, event) {
       n = this.digs[k];
+      console.log(event.key, k, n);
+      if ((event.key == "ArrowRight") && (k>0)) { this.nxt(k) }
+      else if (((event.key == "Backspace") || (event.key == "ArrowLeft")) && (k>0)) { this.prv(k) }
+      else if (event.key == "ArrowLeft") { }//nothing here 
+      else if (event.key == "Enter") { this.rateLine()}
+      else if (parseInt(this.digs[k]) >= 0) { this.nxt(k) };
+//       if (!n.match(/[0-9]/)) {
+//         this.$refs.key[k].value = "";
+//         this.digs[k] = "";
+//         //this.message = "Enter digits only";
+//         //this.rating = ""; 
+    },
+
+/*     isNr: function(k, event) {
+      n = this.digs[k];
       //console.log(event.key, k, n);
-      if (parseInt(event.key, 10) >= 0) {this.nxt(k); }
+      if (parseInt(event.key, 10) >= 0) {this.nxt(k);}
       else if (event.key == "Backspace") {this.prv(k)};
       if (!n.match(/[0-9]/)) {
         this.$refs.key[k].value = "";
@@ -38,7 +53,7 @@ const vm = new Vue({
         //this.message = "Enter digits only";
         //this.rating = "";
       };      
-    },
+    }, */
 
     rateLine() {
       if (this.digs.includes(''))
