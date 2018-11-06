@@ -32,16 +32,14 @@
       <!-- template v-if="showInput" -->
       <tr v-if="showInput">
         <td v-for="(dig, i) in digs">
-<!--           <input type="number" pattern="\d*" maxlength="1" ref="key"  @keyup.left="prv(i)" @keyup.right="nxt(i)" @keyup.enter="rateLine" v-model="digs[i]" @focus="$event.target.select()"
-          @keyup="isNr(i, $event)" 
-          > -->
           <input type="number" maxlength="1" ref="key"  v-model="digs[i]" @focus="$event.target.select()"
-          @keyup="isNr(i, $event)"
-          >          
+          @keyup="isNr(i, $event)" 
+          >
         </td>
-        <td></td>
-        <td v-for="(dig, i) in digs"> {{dig}}
-        </td>
+        <!-- td v-for="(dig, i) in digs"> {{dig}} </td -->
+        <td/>
+        <td><button @click="rateLine" align-center>Go</button> </td>
+        <td/><td/><td/><td/>
       </tr>
       <!-- /template --> 
     </tbody>

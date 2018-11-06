@@ -25,21 +25,21 @@ const vm = new Vue({
       return rn
     },
 
-    nxt(k){if (k<3) this.$refs.key[k+1].focus();},
-    prv(k){if (k>0) this.$refs.key[k-1].focus();},
+    nxt(k){if (k<3) this.$refs.key[k+1].focus(); else  {this.$refs.key[k].blur(); this.$refs.key[k].focus();} },
+    prv(k){if (k>0) this.$refs.key[k-1].focus(); else  {this.$refs.key[k].blur(); this.$refs.key[k].focus();} },
+
     isNr: function(k, event) {
       n = this.digs[k];
       console.log(event.key, k, n);
-      if ((event.key == "ArrowRight") && (k>0)) { this.nxt(k) }
-      else if (((event.key == "Backspace") || (event.key == "ArrowLeft")) && (k>0)) { this.prv(k) }
+      if (event.key == "ArrowRight") { this.nxt(k) }
+      else if ((event.key == "Backspace") || (event.key == "ArrowLeft")) { this.prv(k) }
       else if (event.key == "ArrowLeft") { }//nothing here 
       else if (event.key == "Enter") { this.rateLine()}
-      else if (parseInt(this.digs[k]) >= 0) { this.nxt(k) };
-//       if (!n.match(/[0-9]/)) {
-//         this.$refs.key[k].value = "";
-//         this.digs[k] = "";
-//         //this.message = "Enter digits only";
-//         //this.rating = ""; 
+      else if (n.length >= 0) { 
+        this.digs[k] = n[0];
+        this.$refs.key[k].value = n[0];
+        this.nxt(k) ;
+      };
     },
 
 /*     isNr: function(k, event) {
