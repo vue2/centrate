@@ -25,8 +25,8 @@ const vm = new Vue({
       return rn
     },
 
-    nxt(k){if (k<3) this.$refs.key[k+1].focus(); else  {this.$refs.key[k].blur(); this.$refs.key[k].focus();} },
-    prv(k){if (k>0) this.$refs.key[k-1].focus(); else  {this.$refs.key[k].blur(); this.$refs.key[k].focus();} },
+    nxt(k){if (k<3) this.$refs.key[k+1].focus();}, // else  {this.$refs.key[k].blur(); this.$refs.key[k].focus();} },
+    prv(k){if (k>0) this.$refs.key[k-1].focus();}, // else  {this.$refs.key[k].blur(); this.$refs.key[k].focus();} },
 
     isNr: function(k, event) {
       n = this.digs[k];
